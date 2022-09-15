@@ -1,0 +1,46 @@
+/*
+Create a subclass of the Car class and name it Sedan. The Sedan class has the following fields and methods. ◦int length; ◦double getSalePrice();//If length>20feet,5%discount,Otherwise,10%discount.
+*/
+import java.util.Scanner;
+class  Car{
+    Scanner sc = new Scanner(System.in);
+    int carPrice;
+    public void setCarPrice() {
+        System.out.println("Enter your car price in lakh.");
+        this.carPrice = sc.nextInt();
+    }
+    public int getCarPrice() {
+        return carPrice;
+    }
+}
+
+class Sedan extends Car {
+    int length;
+    double salePrice;
+
+    public void setSalePrice() {
+        System.out.println("Enter your car length");
+        this.length = sc.nextInt();
+        this.salePrice = super.carPrice;
+    }
+
+    public double getSalePrice() {
+        if (length > 20) {
+            System.out.println("Your lenght of car is greater than 20 so you get 5 % discount\n");
+            System.out.print("So you get discount of : ");
+            return 0.05 * salePrice;
+        } else
+            System.out.println("Your lenght of car is less than 20 so you get 10 % discount");
+            System.out.print("So you get discount of : ");
+            return 0.1 * salePrice;
+    }
+}
+public class Carrrr {
+    public static void main(String[] args) {
+        Sedan s = new Sedan();
+        s.setCarPrice();
+        s.getCarPrice();
+        s.setSalePrice();
+        System.out.println(s.getSalePrice());
+    }
+}
