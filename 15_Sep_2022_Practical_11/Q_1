@@ -1,0 +1,19 @@
+
+import java.util.Scanner;
+public class MultiplicationOfN {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter till which numbers do you want to print the 10, 100 and thousand Multiplication table.");
+        int n = sc.nextInt();
+        int ten = 0;
+        int hundred = 0;
+        int thousand = 0;
+        System.out.println("N \t\t 10 x N \t\t 100 x N \t\t\t 1000 x N ");
+        for (int i = 1; i <= n; i++) {
+            ten= 10 * i;
+            hundred = 100 * i;
+            thousand = 1000 * i;
+            System.out.printf("%d\t\t%d x %d = %d\t\t%d x %d = %d\t\t%d x %d = %d\n",i,10,i,10*i,100,i,100*i,1000,i,1000*i);
+        }
+    }
+}
