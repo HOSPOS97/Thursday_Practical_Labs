@@ -1,0 +1,39 @@
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
+public class LowerToUpperCaseByteStream {
+
+	public static void main(String[] args) throws IOException {
+		   ByteArrayOutputStream bt = new ByteArrayOutputStream(12);
+	        System.out.println ("Enter 12 or less than 12 characters string");
+
+	        while (bt.size() != 12)
+	        {
+	        	bt.write(System.in.read( ) );
+	        }
+
+	        byte b[] = bt.toByteArray();
+	        System.out.println("convert into array");
+	        for(int l=0;l<b.length;l++)
+	        {
+	            System.out.print((char)b[l]+" ");
+	        }
+	        System.out.println("\n");
+
+	        ByteArrayInputStream input = new ByteArrayInputStream(b);
+	        int c;
+	        System.out.println("The given characters have been converted to upper case to upper case characters");
+	        for (int i=0;i<1;i++)
+	        {
+	            while((c=input.read()) != -1)
+	            {
+	                System.out.print(Character.toUpperCase((char)c));
+	            }
+	            System.out.println();
+	            input.reset();
+
+	        }
+
+	  }
+}
