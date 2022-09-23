@@ -1,0 +1,43 @@
+//Q.2 .Find the Second highest and Second smallest value in array
+import java.util.Scanner;
+public class SecondHighestNSmallest
+{
+    public static void main(String[] args) 
+    {
+         int n, temp;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter no. of elements you want in array:");
+        n = s.nextInt();
+       System.out.print("You want "+n+" elements in the array.");	
+        int a[] = new int[n];
+        System.out.println("Enter all the elements:");
+        for (int i = 0; i < n; i++){
+            a[i] = s.nextInt();
+        }
+        System.out.print("The elements you have entered in the array is : [ ");
+        for (int i = 0; i<n; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println("]");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = i + 1; j < n; j++)
+            {
+                if (a[i] > a[j])
+                {
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        System.out.print("\nArray after sorting is :- [ ");
+        for (int i = 0; i<n; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println("]");
+        System.out.println("\nSecond Largest array element is : "+a[n-2]);
+        System.out.println("Second smallest array element is : "+a[1]);
+
+    }
+}
