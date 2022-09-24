@@ -1,0 +1,29 @@
+Q.3.Java Program to find duplicate Characters in a String by using Collections
+import  java.util.Scanner;
+import java.util.Set;
+import java.util.LinkedHashSet;
+
+public class DuplicatesCharacters {
+    Scanner sc = new Scanner(System.in);
+    String input;
+
+    public Set<Character> findDuplicate() {
+        System.out.println("Enter any word,paragraph or name,place,animal,anything to check whether the characters are repeated or not.");
+        this.input = sc.nextLine();
+        Set<Character> duplicates = new LinkedHashSet<>();
+        System.out.print("The repeated character occurred in your given input is : ");
+        for (int i = 0; i < input.length(); i++) {
+            for (int j = i + 1; j < input.length(); j++) {
+                if (input.charAt(i) == input.charAt(j)) {
+                    duplicates.add(input.charAt(j));
+                }
+            }
+        }
+        return duplicates;
+    }
+    
+    public static void main(String[] args) {
+        DuplicatesCharacters d = new DuplicatesCharacters();
+        System.out.println(d.findDuplicate());
+    }
+}
