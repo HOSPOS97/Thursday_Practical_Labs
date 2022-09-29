@@ -1,0 +1,32 @@
+public class SeparatingPositiveAndNegative{
+    static void separateElements(int arr[], int n) {
+        int temp[] = new int[n];
+        int j = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] >= 0)
+                temp[j++] = arr[i];
+        }
+        for (int i = 0; i < n; i++) {
+            if (arr[i] < 0)
+                temp[j++] = arr[i];
+        }
+        for (int i = 0; i < n; i++) {
+            arr[i] = temp[i];
+        }
+    }
+       public static void main(String args[]){
+            int arr[] = { -5, 7, -3, -4, 9, 10, -1, 11 };
+            int n = arr.length;
+            System.out.print("Input array : [ ");
+            for (int i = 0; i < n; i++){
+                System.out.print(arr[i] + " ");
+            }
+            System.out.println("]");
+            separateElements(arr, n);
+            System.out.print("Output array : [ ");
+            for (int i = 0; i < n; i++) {
+                System.out.print(arr[i] + " ");
+            }
+            System.out.println("]");
+        }
+    }
