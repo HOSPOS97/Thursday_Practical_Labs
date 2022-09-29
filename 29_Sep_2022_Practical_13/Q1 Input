@@ -1,0 +1,28 @@
+
+public class Coin {
+        static int count(int coins[], int n, int sum)
+        {
+            if (sum == 0)
+                return 1;
+            if (sum < 0)
+                return 0;
+            if (n <= 0)
+                return 0;
+            return count(coins, n - 1, sum)
+                    + count(coins, n, sum - coins[n - 1]);
+        }
+        public static void main(String args[])
+        {
+            int coins[] = { 2, 5, 3, 6 };
+            int n = coins.length;
+            System.out.print("Input for denominations : [ ");
+            for (int i = 0; i<n;i++){
+                System.out.print(coins[i]+" ");
+            }
+            System.out.println("]");
+            int m = 10;
+            System.out.println("The total Rs is "+ m+" Rs");
+            int solution = count(coins, n, m);
+            System.out.println("There will be "+solution+" solutions"+" for Rs "+m);
+        }
+    }
